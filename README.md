@@ -1,4 +1,13 @@
 # To-Do-App
+
+Classic to-do app, but in multiple flavors!
+ 
+Version 1 - HTML and Local Storage
+Version 2 - React and 
+Version 3 - React and Java
+
+User can cycle through each one 
+
 Simple to-do app using https://jsonplaceholder.typicode.com/
 https://jsonplaceholder.typicode.com/todos
 
