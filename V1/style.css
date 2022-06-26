@@ -1,0 +1,12 @@
+/* @import url("font-family: "LucidaConsole", "CourierNew", monospace;"); */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.toDoContainer {
+  border: 1px solid black;
+  height: 500px;
+  width: 1000px;
+}

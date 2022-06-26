@@ -18,6 +18,22 @@
       <li><a href="..\V2\index.html">Version 2</a></li>
       <li><a href="">Version 3</a></li>
     </ul>
+
+    <div class="toDoContainer">
+      <p for="todoInput">Today I need to...</p>
+      <form class="toDoForm" method="POST">
+        <input
+          type="text"
+          placeholder="(add your task here)"
+          name="todoInput"
+          class="todoInput"
+        />
+      </form>
+      <button class="toDoBtn">Add</button>
+      <ul class="todoOutput"></ul>
+    </div>
+
+    <div class="toDoList"></div>
   </body>
   <script src="./script.js"></script>
 </html>
