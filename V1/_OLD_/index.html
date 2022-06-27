@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>To-Do App</title>
+  </head>
+  <body>
+    <div class="toDoContainer">
+      <div class="header">
+        <h1>To-Do App</h1>
+        <h2>Version 1!</h2>
+        <p>Built with vanilla JavaScript and Local Storage</p>
+        <a href="..\V1\index.html">Version 1</a>
+        <a href="..\V2\index.html">Version 2</a>
+        <a href="">Version 3</a>
+      </div>
+
+      <form class="toDoForm" method="POST">
+        <p for="todoInput">Today I need to...</p>
+        <input
+          type="text"
+          placeholder="(add your task here)"
+          name="todoInput"
+          class="todoInput"
+        /><button class="toDoBtn">Add</button>
+      </form>
+
+      <div class="footer">Footer stuff 2022</div>
+    </div>
+
+    <div class="sidebar">
+      <h2>Your Todos:</h2>
+      <ul class="todoOutput"></ul>
+    </div>
+
+    <!-- <div class="toDoList"></div> -->
+  </body>
+  <script src="./script.js"></script>
+</html>

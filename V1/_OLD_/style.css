@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.header {
+  border-bottom: 1px solid white;
+  padding: 1em;
+  height: 25vh;
+  text-align: center;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 0.5em;
+}
+
+.header a:hover {
+  color: black;
+  background-color: white;
+}
+
+.header a:active {
+  color: black;
+  background-color: white;
+  transform: scale(0.5);
+}
+
+ul {
+  /* flex-direction: row; */
+}
+
+.toDoContainer {
+  border: 1px solid black;
+  /* height: 500px; */
+  /* width: 1000px; */
+  flex-direction: column;
+  flex: 3;
+}
+
+.toDoContainer > .toDoForm {
+  min-height: 60vh;
+  padding: 1em;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 1em;
+  border-left: 1px solid white;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.footer {
+  border-top: 1px solid white;
+  /* height: 200vh; */
+  padding: 1em;
+  text-align: center;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,32 +8,42 @@
     <title>To-Do App</title>
   </head>
   <body>
-    <header>
+    <div class="header">
       <h1>To-Do App</h1>
-      <h2>Version 1!</h2>
-      <p>Built with vanilla JavaScript and Local Storage</p>
-    </header>
-    <ul>
-      <li><a href="..\V1\index.html">Version 1</a></li>
-      <li><a href="..\V2\index.html">Version 2</a></li>
-      <li><a href="">Version 3</a></li>
-    </ul>
-
-    <div class="toDoContainer">
-      <p for="todoInput">Today I need to...</p>
-      <form class="toDoForm" method="POST">
-        <input
-          type="text"
-          placeholder="(add your task here)"
-          name="todoInput"
-          class="todoInput"
-        />
-      </form>
-      <button class="toDoBtn">Add</button>
-      <ul class="todoOutput"></ul>
+      <h4>Version 1: Built with vanilla JavaScript and Local Storage</h4>
     </div>
 
-    <div class="toDoList"></div>
+    <div class="navbar">
+      <a href="..\V1\index.html">Version 1</a>
+      <a href="..\V2\index.html">Version 2</a>
+      <a href="">Version 3</a>
+    </div>
+
+    <div class="todoContainer">
+      <div class="todoForm">
+        <h2>Add a To-do</h2>
+        <form class="toDoForm" method="POST">
+          <p for="todoInput">Today I need to...</p>
+          <input
+            type="text"
+            placeholder="(add your task here)"
+            name="todoInput"
+            class="todoInput"
+          /><button class="toDoBtn">Add</button>
+        </form>
+      </div>
+      <div class="todoList">
+        <h2>My To-do List:</h2>
+        <h3>High priority:</h3>
+        <h3>Low priority:</h3>
+        <p>(Ability to drag and drop priority/order)</p>
+        <p>(Ability to slide size of sidebar)</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h2>Footer stuff 2022</h2>
+    </div>
+    <script src="./script.js"></script>
   </body>
-  <script src="./script.js"></script>
 </html>
