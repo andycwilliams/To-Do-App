@@ -1,2 +1,4 @@
-package com.acw.todothymeleaf.model;public class Todo {
+package com.acw.todothymeleaf.model;
+
+public class Todo {
 }

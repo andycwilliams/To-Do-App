@@ -1,2 +1,4 @@
-package com.acw.todothymeleaf;public class TodoRepository {
+package com.acw.todothymeleaf.repository;
+
+public class TodoRepository {
 }

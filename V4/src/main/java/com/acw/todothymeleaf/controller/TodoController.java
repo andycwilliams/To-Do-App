@@ -1,2 +1,4 @@
-package com.acw.todothymeleaf.controller;public class TodoController {
+package com.acw.todothymeleaf.controller;
+
+public class TodoController {
 }
