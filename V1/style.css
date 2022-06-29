@@ -21,7 +21,7 @@ body {
 
 .navbar a {
   color: white;
-  flex: 25%;
+  flex: 20%;
   padding: 15px;
   text-align: center;
   text-decoration: none;
@@ -30,6 +30,11 @@ body {
 .navbar a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.disabled {
+  background-color: grey;
+  pointer-events: none;
 }
 
 .todoContainer {

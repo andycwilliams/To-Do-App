@@ -3,11 +3,10 @@ import React from "react";
 function Header() {
   return (
     <div>
-      <header>
+      <div class="header">
         <h1>To-Do App</h1>
-        <h2>Version 3!</h2>
-        <p>Built with React and Java</p>
-      </header>
+        <h4>Version 3: Built with React and MySQL</h4>
+      </div>
     </div>
   );
 }
