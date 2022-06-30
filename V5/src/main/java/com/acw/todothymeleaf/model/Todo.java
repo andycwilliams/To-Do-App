@@ -6,8 +6,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Table(name = "todo")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//@Table(name = "todo")
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
