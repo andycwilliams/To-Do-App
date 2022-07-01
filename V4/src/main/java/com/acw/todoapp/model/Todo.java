@@ -10,7 +10,7 @@ import java.util.Objects;
 @Table(name = "todo")
 public class Todo {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String todo_content;
 
