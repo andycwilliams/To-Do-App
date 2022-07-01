@@ -5,22 +5,22 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.Objects;
 
-//@Entity
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-//@Table(name = "todo")
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "todo")
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String todo;
+    private String todo_content;
 
-    public Todo(Integer id, String todo) {
+    public Todo(Integer id, String todo_content) {
         this.id = id;
-        this.todo = todo;
+        this.todo_content = todo_content;
     }
 
-    public Todo(String todo) {
-        this.todo = todo;
+    public Todo(String todo_content) {
+        this.todo_content = todo_content;
     }
 
     public Todo() {
@@ -34,32 +34,32 @@ public class Todo {
         this.id = id;
     }
 
-    public String getTodo() {
-        return todo;
+    public String getTodo_content() {
+        return todo_content;
     }
 
-    public void setTodo(String todo) {
-        this.todo = todo;
+    public void setTodo_content(String todo_content) {
+        this.todo_content = todo_content;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Todo todo1 = (Todo) o;
-        return Objects.equals(id, todo1.id) && Objects.equals(todo, todo1.todo);
+        Todo todo = (Todo) o;
+        return Objects.equals(id, todo.id) && Objects.equals(todo_content, todo.todo_content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, todo);
+        return Objects.hash(id, todo_content);
     }
 
     @Override
     public String toString() {
         return "Todo{" +
                 "id=" + id +
-                ", todo='" + todo + '\'' +
+                ", todo_content='" + todo_content + '\'' +
                 '}';
     }
 }

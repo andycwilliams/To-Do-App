@@ -6,24 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/todo")
 public class TodoController {
 
-    private List<Todo> todoList;
-
-    public TodoController(){
-        this.todoList = new ArrayList<>();
-        todoList.add(new Todo("STUFF"));
-        todoList.add(new Todo("Delete"));
-    }
-
-//    @Autowired
-//    TodoRepository todoRepository;
+    @Autowired
+    TodoRepository todoRepository;
 
 //    @GetMapping(value = "/{id}")
 //    @ResponseStatus(HttpStatus.OK)
@@ -40,13 +30,13 @@ public class TodoController {
 //    };
 
     @GetMapping
-    @ResponseStatus(HttpStatus.OK)
+//    @ResponseStatus(HttpStatus.OK)
     public List<Todo> getAllTodos() {
         System.out.println("-------------------------------");
         System.out.println("GETTING ALL TODOS");
         System.out.println("-------------------------------");
-//        return todoRepository.findAll();
-        return todoList;
+        return todoRepository.findAll();
+//        return todoList;
     }
 
 
