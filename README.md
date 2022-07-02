@@ -7,8 +7,10 @@ Classic to-do app, but in multiple flavors!
 - Version 3 - React and MySQL
 - Version 4 - Spring Boot and Java
 - Version 5 - Spring Boot and Thymeleaf / Java
-
+- 
 User can cycle through each one
+
+Java versions have tests (MockMVC, etc.)
 
 Simple to-do app using https://jsonplaceholder.typicode.com/
 https://jsonplaceholder.typicode.com/todos

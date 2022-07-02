@@ -54,13 +54,13 @@ public class TodoController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updatingTodo(@PathVariable int id, @RequestBody Todo todo) {
+    public void updateTodo(@PathVariable int id, @RequestBody Todo todo) {
         if (todo.getId() == null) {
             todo.setId(id);
         }
         if (todo.getId() != id) {
 //            throw new InvalidRequestException("ID in request body must match ID in path");
-            System.out.println("NO ID BY THAT NUMBER");
+            System.out.println("NO TODO BY THAT ID");
         }
         System.out.println("-------------------------------");
         System.out.println("UPDATING TODO");
