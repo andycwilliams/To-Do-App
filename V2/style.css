@@ -10,7 +10,7 @@ body {
 /* ------------------------- Header ------------------------- */
 
 .header {
-  background: maroon;
+  background: darkslateblue;
   color: white;
   padding: 30px;
   text-align: center;
@@ -36,25 +36,17 @@ body {
   color: black;
 }
 
-.V1 {
-  background-color: grey;
-  pointer-events: none;
-}
-
-/* .V1:hover:before {
-  content: "You're here!";
+.V1:hover:before {
+  content: "JS and localStorage";
 }
 
 .V1:hover span {
   display: none;
-} */
-
-.V2:hover:before {
-  content: "JS and NoSQL";
 }
 
-.V2:hover span {
-  display: none;
+.V2 {
+  background-color: grey;
+  pointer-events: none;
 }
 
 .V3:hover:before {
@@ -101,7 +93,7 @@ body {
 }
 
 .todoBtn {
-  background-color: maroon;
+  background-color: darkslateblue;
   padding: 5px;
   color: white;
 }
@@ -120,7 +112,7 @@ body {
 }
 
 .deleteBtn {
-  background-color: maroon;
+  background-color: darkslateblue;
   border: none;
   color: white;
   float: right;
@@ -136,7 +128,7 @@ h2 {
 /* ------------------------- Footer ------------------------- */
 
 .footer {
-  background: maroon;
+  background: darkslateblue;
   border-top: 1px solid black;
   color: white;
   font-size: 12px;
