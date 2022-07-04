@@ -7,8 +7,10 @@ Classic to-do app, but in multiple flavors!
 - Version 3 - React and MySQL
 - Version 4 - Spring Boot and Java
 - Version 5 - Spring Boot and Thymeleaf / Java
-- 
-User can cycle through each one
+
+Ability to drag and drop priority/order)
+
+Ability to slide size of sidebar)
 
 Java versions have tests (MockMVC, etc.)
 

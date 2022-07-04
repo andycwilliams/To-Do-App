@@ -14,15 +14,18 @@
     </div>
 
     <div class="navbar">
-      <a class="disabled">Version 1</a>
-      <a class="here">You're here!</a>
-      <a href="..\V2\index.html">Version 2</a>
-      <a href="">Version 3</a>
-      <a href="../V4/src/main/resources/templates/index.html">Version 4</a>
-      <a href="../V5/src/main/resources/templates/index.html">Version 5</a>
+      <a class="V1"><span>Version 1</span></a>
+      <a class="V2" href="..\V2\index.html"><span>Version 2</span></a>
+      <a class="V3" href=""><span>Version 3</span></a>
+      <a class="V4" href="../V4/src/main/resources/templates/index.html"
+        ><span>Version 4</span></a
+      >
+      <a class="V5" href="../V5/src/main/resources/templates/index.html"
+        ><span>Version 5</span></a
+      >
     </div>
 
-    <div class="todoContainer">
+    <div class="todoInputContainer">
       <div class="todoForm">
         <h2>Add a To-do</h2>
         <form class="toDoForm" method="POST">
@@ -32,19 +35,15 @@
             placeholder="(add your task here)"
             name="todoInput"
             class="todoInput"
-          /><button class="toDoBtn">Add</button>
+          /><button class="todoBtn">Add</button>
         </form>
       </div>
-      <div class="todoList">
+      <div class="todoOutputContainer">
         <h2>My To-do List:</h2>
+        <strong>Tasks left: <span class="todoCount">0</span></strong>
+        <div class="todoOutput"></div>
         <h3>High priority:</h3>
         <h3>Low priority:</h3>
-        <p>(Ability to drag and drop priority/order)</p>
-        <p>(Ability to slide size of sidebar)</p>
-        <p>
-          (Hovering over version buttons changes to describe them e.g. Version 4
-          --> Spring and Thymeleaf)
-        </p>
       </div>
     </div>
 

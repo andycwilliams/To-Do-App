@@ -36,28 +36,54 @@ body {
   color: black;
 }
 
-.disabled {
+.V1 {
   background-color: grey;
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
-.here {
+/* .V1:hover:before {
+  content: "You're here!";
+}
+
+.V1:hover span {
+  display: none;
+} */
+
+.V2:hover:before {
+  content: "JS and NoSQL";
+}
+
+.V2:hover span {
   display: none;
 }
 
-.disabled:hover {
+.V3:hover:before {
+  content: "THREE";
+}
+
+.V3:hover span {
   display: none;
 }
 
-.disabled:hover + .here {
-  background-color: grey;
-  display: block;
-  color: white;
+.V4:hover:before {
+  content: "FOUR";
+}
+
+.V4:hover span {
+  display: none;
+}
+
+.V5:hover:before {
+  content: "FIVE";
+}
+
+.V5:hover span {
+  display: none;
 }
 
 /* ------------------------- Todo ------------------------- */
 
-.todoContainer {
+.todoInputContainer {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
@@ -69,11 +95,24 @@ body {
   padding: 30px;
 }
 
-.todoList {
+.todoOutputContainer {
   background-color: #f1f1f1;
   border-left: 1px solid black;
   flex: 50%;
   padding: 30px;
+}
+
+.todoLi {
+  border: 1px solid black;
+  margin: 0;
+  padding: 5px;
+}
+
+.deleteBtn {
+  background-color: maroon;
+  border: none;
+  color: white;
+  float: right;
 }
 
 /* ------------------------- Footer ------------------------- */
