@@ -1,7 +1,17 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 const PORT = 3000;
 
-app.use("*", (req, res) => res.send("Hello, World!"));
+// Serve static files (including index.html) from the current directory
+app.use(express.static(__dirname));
 
-app.listen(PORT, () => console.log(`Now running on: ${PORT}!`));
+// Define a route to handle requests for the root URL
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});
