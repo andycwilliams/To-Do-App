@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>To-Do App</title>
@@ -16,24 +17,24 @@
       <div class="">
         <div class="">
           <h2>Add a To-do</h2>
-          <form class="" method="POST">
-            <p for="">Today I need to...</p>
+
+          <form action="/submit" method="post" id="todoForm">
+            <label for="todoInput">Today I need to...</label>
+            <br />
             <input
               type="text"
+              id="todoInput"
+              name="userInput"
               placeholder="(add your task here)"
-              name=""
-              class=""
+              required
             />
-            <button type="button" class="todoBtn">Add</button>
+            <button type="submit" class="todoBtn">Add</button>
           </form>
         </div>
+
         <div class="">
           <h2>My To-do List</h2>
-          <h4>Tasks left: <span class="">0</span></h4>
-          <div class=""></div>
-          <h3>High Priority:</h3>
-          <h3>Low Priority:</h3>
-          <h3>Completed:</h3>
+          <h4>Tasks left: <span class="todoCount">0</span></h4>
         </div>
       </div>
     </main>

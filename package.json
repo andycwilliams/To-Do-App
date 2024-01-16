@@ -4,7 +4,13 @@
   "description": "Classic to-do app, but in multiple flavors!",
   "main": "script.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "index.html"
+    ]
   },
   "repository": {
     "type": "git",
