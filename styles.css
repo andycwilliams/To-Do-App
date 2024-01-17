@@ -16,15 +16,16 @@
 }
 
 #todoTable tr:nth-child(even) {
-  background-color: #d3d3d3;
+  background-color: #f7d583;
 }
 
 #todoTable tr:hover {
-  background-color: #ce00ce;
+  background-color: #0d46d0;
+  color: #ffffff;
 }
 
 #todoTable th {
-  background-color: #b8860b;
+  background-color: #d0970d;
   color: white;
   padding-bottom: 10px;
   padding-top: 10px;

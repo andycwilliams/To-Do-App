@@ -3,6 +3,7 @@ const todoBtn = document.querySelector("#todoBtn");
 const todoCount = document.querySelector("#todoCount");
 const todoListEl = document.querySelector("#todoListEl");
 const todoOutput = document.querySelector("#todoOutput");
+const todoTable = document.querySelector("#todoTable");
 
 let todoList = [];
 
@@ -25,6 +26,11 @@ todoBtn.addEventListener("click", (e) => {
 
   const todoValue = document.querySelector("#todoInput").value;
   console.log(todoValue);
+
+  if (todoValue == "") {
+    alert("Please enter a todo!");
+    return false;
+  }
 
   const timestamp = new Date().getTime();
   console.log(timestamp);
@@ -69,13 +75,23 @@ const placeholderTodos = async () => {
 
     for (let i = 0; i < 5; i++) {
       const todo = todos[i];
-      console.log(`Todo ${i + 1}: `, todo);
 
-      let p = document.createElement("p");
-      p.textContent = todo.title;
-      p.setAttribute("data-index", i);
-      p.classList.add("todoLi");
-      todoListEl.appendChild(p);
+      const tableRow = document.createElement("tr");
+
+      const todoItem = document.createElement("td");
+      todoItem.textContent = todo.title;
+
+      const todoDelete = document.createElement("td");
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "X";
+      deleteBtn.classList.add("deleteBtn");
+
+      todoDelete.appendChild(deleteBtn);
+
+      tableRow.appendChild(todoItem);
+      tableRow.appendChild(todoDelete);
+
+      todoTable.appendChild(tableRow);
     }
   } catch (error) {
     console.error("Error retrieving data: ", error);
