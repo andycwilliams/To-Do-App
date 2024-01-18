@@ -1,8 +1,6 @@
 const clearBtn = document.querySelector("#clearBtn");
 const todoBtn = document.querySelector("#todoBtn");
 const todoCount = document.querySelector("#todoCount");
-// const todoListEl = document.querySelector("#todoListEl");
-// const todoOutput = document.querySelector("#todoOutput");
 const todoTable = document.querySelector("#todoTable");
 
 let todoList = [];
@@ -85,7 +83,7 @@ const placeholderTodos = async () => {
       const todoDelete = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "X";
-      deleteBtn.classList.add("deleteBtn");
+      deleteBtn.classList.add("buttons");
       deleteBtn.addEventListener("click", () => removeTodo(todo));
 
       todoDelete.appendChild(deleteBtn);
@@ -120,7 +118,7 @@ const populateTodos = async () => {
       const todoDelete = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "X";
-      deleteBtn.classList.add("deleteBtn");
+      deleteBtn.classList.add("buttons");
       deleteBtn.addEventListener("click", () => removeTodo(key));
 
       todoDelete.appendChild(deleteBtn);
