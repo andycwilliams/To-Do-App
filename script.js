@@ -6,20 +6,22 @@ const todoOutput = document.querySelector("#todoOutput");
 const todoTable = document.querySelector("#todoTable");
 
 let todoList = [];
+let todoCounter = 0;
 
 // Initialize
 
 const init = () => {
-  const storedTodos = JSON.parse(localStorage.getItem("todoStorage"));
+  todoList.innerHTML = "";
+  // const storedTodos = JSON.parse(localStorage.getItem("todoStorage"));
 
-  if (storedTodos !== null) {
-    todoList = storedTodos;
-  }
+  // if (storedTodos !== null) {
+  //   todoList = storedTodos;
+  // }
 
   populateTodos();
 };
 
-// Add function to submit button and retrieve input
+// Add listener to submit button and retrieve input
 
 todoBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -32,23 +34,22 @@ todoBtn.addEventListener("click", (e) => {
     return false;
   }
 
-  const timestamp = new Date().getTime();
-  console.log(timestamp);
-
-  addTodo(`${todoValue}_${timestamp}`, todoValue);
+  addTodo(todoValue);
+  init();
 });
 
 // Add todo to LocalStorage
 
-const addTodo = (key, value) => {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-    console.log(`Todo: "${key}" stored!`);
-  } catch (error) {
-    console.error("Error:", error);
-  }
+const addTodo = (value) => {
+  const order = JSON.parse(localStorage.getItem("todoOrder")) || [];
+  const key = `todo_${new Date().getTime()}`;
 
-  localStorageLog();
+  order.push(key);
+
+  localStorage.setItem("todoOrder", JSON.stringify(order));
+  localStorage.setItem(key, JSON.stringify(value));
+
+  // localStorageLog();
 };
 
 // Log everything currently stored in localStorage
@@ -85,6 +86,7 @@ const placeholderTodos = async () => {
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "X";
       deleteBtn.classList.add("deleteBtn");
+      deleteBtn.addEventListener("click", () => removeTodo(todo));
 
       todoDelete.appendChild(deleteBtn);
 
@@ -100,41 +102,64 @@ const placeholderTodos = async () => {
 
 // Populate todos in DOM
 
-const populateTodos = () => {
-  placeholderTodos();
-
+const populateTodos = async () => {
   todoList.innerHTML = "";
-  todoCount.textContent = todoList.length;
+  todoCount.textContent = localStorage.length - 1;
 
-  // for (let i = 0; i < todoList.length; i++) {
-  //   const todo = todoList[i];
-
-  //   let p = document.createElement("p");
-  //   p.textContent = todo;
-  //   p.setAttribute("data-index", i);
-  //   p.classList.add("todoLi");
-
-  //   const deleteBtn = document.createElement("button");
-  //   deleteBtn.textContent = "X";
-  //   deleteBtn.classList.add("deleteBtn");
-
-  //   p.appendChild(deleteBtn);
-  //   todoListEl.appendChild(p);
-  // }
-};
-
-// Remove todo from LocalStorage
-
-const removeTodo = (key) => {
   try {
-    localStorage.removeItem(key);
-    console.log(`Todo "${key}" removed!`);
+    const order = JSON.parse(localStorage.getItem("todoOrder")) || [];
+
+    for (const key of order) {
+      const value = JSON.parse(localStorage.getItem(key));
+
+      const tableRow = document.createElement("tr");
+
+      const todoItem = document.createElement("td");
+      todoItem.textContent = value;
+
+      const todoDelete = document.createElement("td");
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "X";
+      deleteBtn.classList.add("deleteBtn");
+      deleteBtn.addEventListener("click", () => removeTodo(key));
+
+      todoDelete.appendChild(deleteBtn);
+
+      tableRow.appendChild(todoItem);
+      tableRow.appendChild(todoDelete);
+
+      todoTable.appendChild(tableRow);
+    }
   } catch (error) {
-    console.error("Error in removing Todo:", error);
+    console.error("Error: ", error);
   }
 };
 
-// Remove all todos from localStorage
+// Remove todo from table and LocalStorage
+
+const removeTodo = (key) => {
+  const removeRow = Array.from(todoTable.rows).find(
+    (row) => row.cells[0].textContent === key
+  );
+
+  if (removeRow) {
+    todoTable.removeChild(removeRow);
+    // localStorage.removeItem(key);
+  }
+
+  localStorage.removeItem(key);
+
+  const order = JSON.parse(localStorage.getItem("todoOrder")) || [];
+  const index = order.indexOf(key);
+  if (index !== -1) {
+    order.splice(index, 1);
+    localStorage.setItem("todoOrder", JSON.stringify(order));
+  }
+
+  // console.log(`Todo "${key}" removed!`);
+};
+
+// Remove all todos from table and localStorage
 
 clearBtn.addEventListener("click", (e) => {
   e.preventDefault();

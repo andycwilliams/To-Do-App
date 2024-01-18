@@ -32,6 +32,10 @@
   text-align: left;
 }
 
+.deleteBtn {
+  border-radius: 5px;
+}
+
 /* Light mode */
 
 /* Dark mode */
