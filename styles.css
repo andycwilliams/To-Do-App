@@ -1,8 +1,28 @@
-/* * {
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-} */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #8ea604;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  padding: 50px;
+}
 
 #todoTable {
   border-collapse: collapse;
@@ -12,7 +32,19 @@
 #todoTable td,
 #todoTable th {
   border: 1px solid #ddd;
-  padding: 5px;
+  /* padding: 5px; */
+  padding: 8px;
+  text-align: left;
+}
+
+#todoTable th:nth-child(1),
+#todoTable th:nth-child(1) {
+  width: 90%;
+}
+
+#todoTable th:nth-child(2),
+#todoTable th:nth-child(2) {
+  width: 10%;
 }
 
 #todoTable tr:nth-child(even) {
@@ -21,12 +53,12 @@
 
 #todoTable tr:hover {
   background-color: #0d46d0;
-  color: #ffffff;
+  color: #fff;
 }
 
 #todoTable th {
-  background-color: #d0970d;
-  color: white;
+  background-color: #8ea604;
+  color: #fff;
   padding-bottom: 10px;
   padding-top: 10px;
   text-align: left;
@@ -36,6 +68,14 @@
   border-radius: 5px;
 }
 
-/* Light mode */
+footer {
+  background-color: #8ea604;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+}
 
+/* Light mode */
 /* Dark mode */
+
+/*# sourceMappingURL=styles.css.map */

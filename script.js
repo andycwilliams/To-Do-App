@@ -1,8 +1,8 @@
 const clearBtn = document.querySelector("#clearBtn");
 const todoBtn = document.querySelector("#todoBtn");
 const todoCount = document.querySelector("#todoCount");
-const todoListEl = document.querySelector("#todoListEl");
-const todoOutput = document.querySelector("#todoOutput");
+// const todoListEl = document.querySelector("#todoListEl");
+// const todoOutput = document.querySelector("#todoOutput");
 const todoTable = document.querySelector("#todoTable");
 
 let todoList = [];
@@ -104,7 +104,7 @@ const placeholderTodos = async () => {
 
 const populateTodos = async () => {
   todoList.innerHTML = "";
-  todoCount.textContent = localStorage.length - 1;
+  todoCount.textContent = localStorage.length;
 
   try {
     const order = JSON.parse(localStorage.getItem("todoOrder")) || [];
