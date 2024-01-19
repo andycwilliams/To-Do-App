@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body,
 h1,
 h2,
@@ -8,9 +14,16 @@ li {
   padding: 0;
 }
 
+section {
+  text-align: center;
+}
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -21,7 +34,23 @@ header {
 }
 
 main {
-  padding: 50px;
+  flex: 1;
+  padding: 10px;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    padding: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main {
+    padding: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main {
+    padding: 50px;
+  }
 }
 
 #todoTable {
@@ -31,9 +60,11 @@ main {
 #todoTable td,
 #todoTable th {
   border: 1px solid #ddd;
-  /* padding: 5px; */
   padding: 8px;
   text-align: left;
+}
+#todoTable td {
+  vertical-align: middle;
 }
 #todoTable th {
   background-color: #8ea604;
@@ -59,7 +90,26 @@ main {
   color: #fff;
 }
 
-.buttons {
+footer {
+  background-color: #8ea604;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.tableButtons, .buttons {
   background-color: #ec9f05;
   color: #fff;
   border-radius: 5px;
@@ -68,22 +118,19 @@ main {
   padding: 10px 20px;
   transition: background-color 0.3s, transform 0.3s;
 }
-.buttons:hover,
+.tableButtons:hover, .buttons:hover,
+.tableButtons active,
 .buttons active {
   background-color: #d76a03;
 }
-.buttons:active {
-  transform: scale(0.95);
+.tableButtons:active, .buttons:active {
+  transform: scale(0.9);
 }
 
-footer {
-  background-color: #8ea604;
-  color: #fff;
-  padding: 1px;
-  text-align: center;
+.buttons {
+  padding: 10px 20px;
 }
 
-/* Light mode */
 /* Dark mode */
 
 /*# sourceMappingURL=styles.css.map */

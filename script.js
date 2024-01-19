@@ -2,9 +2,12 @@ const clearBtn = document.querySelector("#clearBtn");
 const todoBtn = document.querySelector("#todoBtn");
 const todoCount = document.querySelector("#todoCount");
 const todoTable = document.querySelector("#todoTable");
+const currentYear = new Date().getFullYear();
 
 let todoList = [];
 let todoCounter = 0;
+
+document.getElementById("currentYear").textContent = currentYear;
 
 // Initialize
 
@@ -46,23 +49,6 @@ const addTodo = (value) => {
 
   localStorage.setItem("todoOrder", JSON.stringify(order));
   localStorage.setItem(key, JSON.stringify(value));
-
-  // localStorageLog();
-};
-
-// Log everything currently stored in localStorage
-
-const localStorageLog = () => {
-  console.log("Currently in localStorage...");
-  try {
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = JSON.parse(localStorage.getItem(key));
-      console.log(`Key: ${key} \n Value: `, value);
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
 };
 
 // Get placeholders todos to pre-populate list
@@ -118,9 +104,10 @@ const populateTodos = async () => {
       const todoDelete = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "X";
-      deleteBtn.classList.add("buttons");
+      deleteBtn.classList.add("tableButtons");
       deleteBtn.addEventListener("click", () => removeTodo(key));
-
+      // todoDelete.style.lineHeight = "2";
+      todoDelete.style.height = "30px";
       todoDelete.appendChild(deleteBtn);
 
       tableRow.appendChild(todoItem);
@@ -142,7 +129,6 @@ const removeTodo = (key) => {
 
   if (removeRow) {
     todoTable.removeChild(removeRow);
-    // localStorage.removeItem(key);
   }
 
   localStorage.removeItem(key);

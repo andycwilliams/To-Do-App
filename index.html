@@ -15,22 +15,24 @@
 
     <main>
       <div>
-        <div>
+        <section>
           <h2>Add a To-do</h2>
 
           <form action="/submit" method="post" id="todoForm">
-            <label for="todoInput">Today I need to...</label>
+            <label for="todoInput">Today I need to do...</label>
             <br />
             <input
               type="text"
               id="todoInput"
               name="userInput"
-              placeholder="(add your task here)"
+              placeholder="(Add your to-do here)"
               required
             />
-            <button type="submit" id="todoBtn" class="buttons">Add</button>
+            <button type="submit" id="todoBtn" class="buttons">
+              Add To-do
+            </button>
           </form>
-        </div>
+        </section>
 
         <div>
           <h2>My To-do List</h2>
@@ -39,16 +41,17 @@
 
       <table id="todoTable">
         <tr>
-          <th>Item</th>
-          <th>Delete</th>
+          <th>To-do</th>
+          <th>Delete to-do</th>
         </tr>
       </table>
-      <h4>Tasks left: <span id="todoCount">0</span></h4>
-      <button id="clearBtn" class="buttons">Clear all</button>
+      <h4>To-dos left: <span id="todoCount">0</span></h4>
+      <button id="clearBtn" class="buttons">Clear all to-dos</button>
     </main>
 
     <footer>
-      <h3>Footer stuff</h3>
+      <h3>To-do App</h3>
+      <p>Copyright&copy; <span id="currentYear"></span></p>
     </footer>
 
     <script src="./script.js"></script>
