@@ -63,8 +63,8 @@ main {
   padding: 8px;
   text-align: left;
 }
-#todoTable td {
-  vertical-align: middle;
+#todoTable td:nth-child(2) {
+  text-align: center;
 }
 #todoTable th {
   background-color: #8ea604;
@@ -90,10 +90,14 @@ main {
   color: #fff;
 }
 
+#todoCount {
+  padding: 5px;
+}
+
 footer {
   background-color: #8ea604;
   color: #fff;
-  padding: 1px;
+  padding: 5px;
   text-align: center;
   bottom: 0;
   width: 100%;
