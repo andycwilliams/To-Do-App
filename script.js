@@ -23,7 +23,6 @@ todoBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   const todoValue = document.querySelector("#todoInput").value;
-  console.log(todoValue);
 
   if (todoValue == "") {
     alert("Please enter a todo!");
@@ -31,8 +30,6 @@ todoBtn.addEventListener("click", (e) => {
   }
 
   addTodo(todoValue);
-  // init();
-  // populateTodos();
 });
 
 // Add to-do to LocalStorage
@@ -115,9 +112,6 @@ const populateTodos = () => {
   } catch (error) {
     console.error("Error in populateTodos: ", error);
   }
-
-  // console.log(JSON.parse(localStorage.getItem("todoOrder")));
-  // console.log(localStorage);
 };
 
 // Remove to-do from table and LocalStorage
@@ -145,12 +139,19 @@ const removeTodo = (key) => {
 
 clearBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  const confirmation = confirm("Are you sure you want to do that?");
 
-  try {
-    localStorage.clear();
+  if (localStorage.length === 0) {
+    alert("Wait a second, you don't have anything to do!");
+    return;
+  }
+
+  if (confirmation) {
     console.log("All todos removed!");
-  } catch (error) {
-    console.error("Error removing all todos:", error);
+    localStorage.clear();
+    alert("You wanted to do that.");
+  } else {
+    alert("You did not want to do that.");
   }
 });
 

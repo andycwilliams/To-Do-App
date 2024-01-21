@@ -14,26 +14,22 @@
     </header>
 
     <main>
-      <div>
-        <section>
-          <h2>Add a To-do</h2>
+      <section>
+        <h2>Add a To-do</h2>
 
-          <form action="/submit" method="post" id="todoForm">
-            <label for="todoInput">Today I need to do...</label>
-            <br />
-            <input
-              type="text"
-              id="todoInput"
-              name="userInput"
-              placeholder="(Add your to-do here)"
-              required
-            />
-            <button type="submit" id="todoBtn" class="buttons">
-              Add To-do
-            </button>
-          </form>
-        </section>
-      </div>
+        <form action="/submit" method="post" id="todoForm">
+          <label for="todoInput">Today I need to do...</label>
+          <br />
+          <input
+            type="text"
+            id="todoInput"
+            name="userInput"
+            placeholder="(Add your to-do here)"
+            required
+          />
+          <button type="submit" id="todoBtn" class="buttons">Add To-do</button>
+        </form>
+      </section>
 
       <section>
         <div>
@@ -45,7 +41,7 @@
             <th>Delete to-do</th>
           </tr>
         </table>
-        <h4>To-dos left: <span id="todoCount">0</span></h4>
+        <h4>To-dos left to do: <span id="todoCount">0</span></h4>
         <button id="clearBtn" class="buttons">Clear all to-dos</button>
       </section>
     </main>
